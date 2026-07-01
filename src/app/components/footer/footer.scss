@@ -1,0 +1,28 @@
+.footer {
+  font-size: 0.95rem;
+}
+
+.footer-title {
+  color: #ffc107;
+  font-weight: 700;
+}
+
+.footer-text {
+  color: #f1f1f1;
+}
+
+.footer-copy {
+  color: #9c9c9c;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
