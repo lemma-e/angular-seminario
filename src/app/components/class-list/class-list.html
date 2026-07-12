@@ -1,1 +1,7 @@
-<p>class-list works!</p>
+<section>
+    <h1>Clases de World of Warcraft</h1>
+
+    @for (wowClass of wowClasses; track wowClass.id) {
+        <app-class-card [wowClass]="wowClass"></app-class-card> <!--Atomico!-->
+    }
+</section>
