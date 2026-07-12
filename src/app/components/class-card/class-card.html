@@ -1,6 +1,27 @@
-<article>
-    <h2>{{wowClass.name}}</h2>
-    <p>{{wowClass.description}}</p>
-    <p><strong>Armadura: </strong>{{wowClass.armorType}}</p>
-    <p><strong>Roles: </strong>{{wowClass.roles}}</p>
+<article class="card bg-dark text-light border-warning h-100 shadow-sm">
+    <img [src]="wowClass.image" [alt]="wowClass.name" class="card-img-top">
+
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+            <h2 class="card-title h4 text-warning mb-0">{{ wowClass.name }}</h2>
+
+            @if (wowClass.roles.length > 1) {
+                <span class="badge text-bg-success">Clase versátil</span>
+            }@else {
+                <span class="badge text-bg-info">Clase especializada</span>
+            }
+        </div>
+
+        <p class="card-text">{{wowClass.description}}</p>
+        <p class="mb-2"><strong>Armadura:</strong>{{wowClass.armorType}}</p>
+
+        <div>
+        <strong class="d-block mb-2">Roles:</strong>
+        <div class="d-flex flex-wrap gap-2">
+            @for (role of wowClass.roles; track role) {
+            <span class="badge text-bg-primary">{{role}}</span>
+            }
+        </div>
+        </div>
+  </div>
 </article>

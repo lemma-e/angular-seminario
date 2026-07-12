@@ -1,7 +1,16 @@
-<section>
-    <h1>Clases de World of Warcraft</h1>
+<section class="page-background py-5">
+    <div class="container">
+        <div class="mb-5">
+            <p class="text-warning text-uppercase fw-bold display-5 fw-bold mb-2"> Guía de clases</p>
+            <p class="lead text-light opacity-75 mb-0">Explorá sus roles, armaduras y estilos de juego</p>
+        </div>
 
-    @for (wowClass of wowClasses; track wowClass.id) {
-        <app-class-card [wowClass]="wowClass"></app-class-card> <!--Atomico!-->
-    }
+        <div class="row g-4">
+            @for (wowClass of wowClasses; track wowClass.id) {
+                <div class="col-12 col-md-6 col-lg-4">
+                <app-class-card [wowClass]="wowClass"></app-class-card>
+                </div>
+            }
+        </div>
+    </div>
 </section>
