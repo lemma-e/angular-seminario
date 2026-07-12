@@ -6,9 +6,30 @@ import { App } from './app';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { Home } from './pages/home/home';
+import { Classes } from './pages/classes/classes';
+import { Dungeons } from './pages/dungeons/dungeons';
+import { Recommender } from './pages/recommender/recommender';
+import { ClassList } from './components/class-list/class-list';
+import { ClassCard } from './components/class-card/class-card';
+import { DungeonList } from './components/dungeon-list/dungeon-list';
+import { PartyBuilder } from './components/party-builder/party-builder';
+import { PartySummary } from './components/party-summary/party-summary';
 
 @NgModule({
-  declarations: [App, Navbar, Footer, Home],
+  declarations: [
+    App,
+    Navbar,
+    Footer,
+    Home,
+    Classes,
+    Dungeons,
+    Recommender,
+    ClassList,
+    ClassCard,
+    DungeonList,
+    PartyBuilder,
+    PartySummary,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
