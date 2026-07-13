@@ -1,1 +1,39 @@
-<p>dungeon-list works!</p>
+<section class="page-background py-5">
+    <div class="container">
+        <div class="mb-5">
+            <p class="text-warning text-uppercase fw-bold mb-2">Guía de mazmorras</p>
+
+            <h1 class="display-5 fw-bold mb-2">Mazmorras de Midnight</h1>
+
+            <p class="lead text-light opacity-75 mb-0">Consultá ubicaciones, dificultades y clases recomendadas</p>
+        </div>
+
+        <div class="row g-4">
+            @for (dungeon of dungeons; track dungeon.id) {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card bg-dark text-light border-warning h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+                                <h2 class="card-title h4 text-warning mb-0">{{dungeon.name}}</h2>
+                                <span class="badge text-bg-danger">{{dungeon.difficulty}}</span>
+                            </div>
+
+                            <p class="card-text text-light opacity-75">{{dungeon.description}}</p>
+
+                            <p class="mb-4"><strong class="text-warning">Ubicación: </strong>{{dungeon.location}}</p>
+
+                            <div class="mt-auto"><strong class="d-block mb-2">Clases recomendadas</strong>
+
+                                <div class="d-flex flex-wrap gap-2">
+                                    @for (recommendedClass of dungeon.recommendedClasses;track recommendedClass){
+                                        <span class="badge text-bg-primary">{{recommendedClass}}</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+    </div>
+</section>
