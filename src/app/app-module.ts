@@ -14,6 +14,8 @@ import { ClassCard } from './components/class-card/class-card';
 import { DungeonList } from './components/dungeon-list/dungeon-list';
 import { PartyBuilder } from './components/party-builder/party-builder';
 import { PartySummary } from './components/party-summary/party-summary';
+// import { HttpClientModule } from '@angular/common/http'; ya no se usa en angular 22
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { PartySummary } from './components/party-summary/party-summary';
     PartySummary,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })
 export class AppModule {}

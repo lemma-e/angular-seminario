@@ -6,7 +6,7 @@
         </div>
 
         <div class="row g-4">
-            @for (wowClass of wowClasses; track wowClass.id) {
+            @for (wowClass of wowClasses(); track wowClass.id) {
                 <div class="col-12 col-md-6 col-lg-4">
                 <app-class-card [wowClass]="wowClass"></app-class-card>
                 </div>
