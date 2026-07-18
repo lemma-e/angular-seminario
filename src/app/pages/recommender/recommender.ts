@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './recommender.html',
   styleUrl: './recommender.scss',
 })
-export class Recommender {}
+export class Recommender {
+    submittedParty: unknown = null;
+
+    onPartySubmitted(party: unknown): void {
+      this.submittedParty = party;
+      //debug
+      console.log('Party:', party);
+    }
+}

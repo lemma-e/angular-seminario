@@ -1,2 +1,9 @@
-<app-party-builder></app-party-builder>
-<app-party-summary></app-party-summary>
+<section class="page-background py-5">
+    <div class="container">
+
+        <app-party-builder (formSubmitted)="onPartySubmitted($event)"></app-party-builder>
+
+        <app-party-summary [party]="submittedParty"></app-party-summary>
+
+    </div>
+</section>

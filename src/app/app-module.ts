@@ -16,6 +16,7 @@ import { PartyBuilder } from './components/party-builder/party-builder';
 import { PartySummary } from './components/party-summary/party-summary';
 // import { HttpClientModule } from '@angular/common/http'; ya no se usa en angular 22
 import { provideHttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { provideHttpClient } from '@angular/common/http';
     PartyBuilder,
     PartySummary,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })

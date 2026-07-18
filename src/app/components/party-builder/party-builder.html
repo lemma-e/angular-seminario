@@ -1,1 +1,346 @@
-<p>party-builder works!</p>
+<div class="card bg-dark text-light border-warning shadow-sm">
+    <div class="card-body p-4">
+
+        <h2 class="text-warning mb-2"> Crear composición de Party </h2>
+        <p class="text-light opacity-75 mb-4"> Seleccioná una mazmorra y los cinco integrantes del grupo.</p>
+
+        <form [formGroup]="partyForm" (submit)="onSubmit()">
+
+        <div class="mb-4">
+            <label for="dungeon" class="form-label"> Mazmorra</label>
+
+            <select id="dungeon" class="form-select" formControlName="dungeon">
+            <option value="">
+                Seleccioná una mazmorra
+            </option>
+
+            <option value="The Stonevault">
+                The Stonevault
+            </option>
+
+            <option value="Ara-Kara">
+                Ara-Kara
+            </option>
+
+            <option value="The Dawnbreaker">
+                The Dawnbreaker
+            </option>
+            </select>
+
+            @if (
+            partyForm.get('dungeon')?.hasError('required') &&
+            partyForm.get('dungeon')?.touched
+            ) {
+            <p class="text-danger mt-2 mb-0">
+                Debés seleccionar una mazmorra.
+            </p>
+            }
+    </div>
+
+      <div
+        class="border border-secondary rounded p-3 mb-3"
+        formGroupName="member1"
+      >
+        <h3 class="h5 text-warning mb-3">
+          Integrante 1
+        </h3>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">
+              Clase
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="wowClass"
+              (change)="onClassChange('member1')"
+            >
+              <option value="">
+                Seleccioná una clase
+              </option>
+
+              @for (wowClass of wowClasses(); track wowClass.id) {
+                <option [value]="wowClass.name">
+                  {{ wowClass.name }}
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">
+              Especialización
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="specialization"
+            >
+              <option value="">
+                Seleccioná una especialización
+              </option>
+
+              @for (
+                specialization of getSpecializations('member1');
+                track specialization.name
+              ) {
+                <option [value]="specialization.name">
+                  {{ specialization.name }} — {{ specialization.role }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border border-secondary rounded p-3 mb-3"
+        formGroupName="member2"
+      >
+        <h3 class="h5 text-warning mb-3">
+          Integrante 2
+        </h3>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">
+              Clase
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="wowClass"
+              (change)="onClassChange('member2')"
+            >
+              <option value="">
+                Seleccioná una clase
+              </option>
+
+              @for (wowClass of wowClasses(); track wowClass.id) {
+                <option [value]="wowClass.name">
+                  {{ wowClass.name }}
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">
+              Especialización
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="specialization"
+            >
+              <option value="">
+                Seleccioná una especialización
+              </option>
+
+              @for (
+                specialization of getSpecializations('member2');
+                track specialization.name
+              ) {
+                <option [value]="specialization.name">
+                  {{ specialization.name }} — {{ specialization.role }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border border-secondary rounded p-3 mb-3"
+        formGroupName="member3"
+      >
+        <h3 class="h5 text-warning mb-3">
+          Integrante 3
+        </h3>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">
+              Clase
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="wowClass"
+              (change)="onClassChange('member3')"
+            >
+              <option value="">
+                Seleccioná una clase
+              </option>
+
+              @for (wowClass of wowClasses(); track wowClass.id) {
+                <option [value]="wowClass.name">
+                  {{ wowClass.name }}
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">
+              Especialización
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="specialization"
+            >
+              <option value="">
+                Seleccioná una especialización
+              </option>
+
+              @for (
+                specialization of getSpecializations('member3');
+                track specialization.name
+              ) {
+                <option [value]="specialization.name">
+                  {{ specialization.name }} — {{ specialization.role }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border border-secondary rounded p-3 mb-3"
+        formGroupName="member4"
+      >
+        <h3 class="h5 text-warning mb-3">
+          Integrante 4
+        </h3>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">
+              Clase
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="wowClass"
+              (change)="onClassChange('member4')"
+            >
+              <option value="">
+                Seleccioná una clase
+              </option>
+
+              @for (wowClass of wowClasses(); track wowClass.id) {
+                <option [value]="wowClass.name">
+                  {{ wowClass.name }}
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">
+              Especialización
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="specialization"
+            >
+              <option value="">
+                Seleccioná una especialización
+              </option>
+
+              @for (
+                specialization of getSpecializations('member4');
+                track specialization.name
+              ) {
+                <option [value]="specialization.name">
+                  {{ specialization.name }} — {{ specialization.role }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border border-secondary rounded p-3 mb-4"
+        formGroupName="member5"
+      >
+        <h3 class="h5 text-warning mb-3">
+          Integrante 5
+        </h3>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">
+              Clase
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="wowClass"
+              (change)="onClassChange('member5')"
+            >
+              <option value="">
+                Seleccioná una clase
+              </option>
+
+              @for (wowClass of wowClasses(); track wowClass.id) {
+                <option [value]="wowClass.name">
+                  {{ wowClass.name }}
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">
+              Especialización
+            </label>
+
+            <select
+              class="form-select"
+              formControlName="specialization"
+            >
+              <option value="">
+                Seleccioná una especialización
+              </option>
+
+              @for (
+                specialization of getSpecializations('member5');
+                track specialization.name
+              ) {
+                <option [value]="specialization.name">
+                  {{ specialization.name }} — {{ specialization.role }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      @if (
+        partyForm.hasError('invalidComposition') &&
+        partyForm.touched
+      ) {
+        <div class="alert alert-danger">
+          La party debe contener exactamente:
+          <strong>1 Tanque, 1 Sanador y 3 DPS.</strong>
+        </div>
+      }
+
+      <button
+        type="submit"
+        class="btn btn-warning fw-bold w-100"
+        [disabled]="partyForm.invalid"
+      >
+        Crear composición
+      </button>
+
+    </form>
+
+  </div>
+</div>

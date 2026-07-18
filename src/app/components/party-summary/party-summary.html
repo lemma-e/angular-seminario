@@ -1,1 +1,93 @@
-<p>party-summary works!</p>
+@if (party) {
+    <div class="card bg-dark text-light border-warning shadow-sm mt-4">
+        <div class="card-body p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                    <h2 class="text-warning mb-1"> Resumen de la Party </h2>
+                    <p class="text-light opacity-75 mb-0">La composición fue guardada correctamente.</p>
+                </div>
+
+                <span class="badge text-bg-warning fs-6">{{party.dungeon}}</span>
+            </div>
+
+            <div class="list-group">
+                <div class="list-group-item bg-dark text-light border-secondary d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <span class="text-warning fw-bold">Integrante 1</span>
+                        <h3 class="h5 mb-0 mt-1">{{party.member1.wowClass}}</h3>
+                    </div>
+                    <span class="badge text-bg-primary">{{party.member1.specialization}}</span>
+                </div>
+
+            <div class="list-group-item bg-dark text-light border-secondary d-flex justify-content-between align-items-center gap-3">
+                <div>
+                  <span class="text-warning fw-bold">
+                    Integrante 2
+                  </span>
+
+                  <h3 class="h5 mb-0 mt-1">
+                    {{ party.member2.wowClass }}
+                  </h3>
+              </div>
+              <span class="badge text-bg-primary">
+                {{ party.member2.specialization }}
+              </span>
+            </div>
+
+        <div class="list-group-item bg-dark text-light border-secondary d-flex justify-content-between align-items-center gap-3">
+          <div>
+            <span class="text-warning fw-bold">
+              Integrante 3
+            </span>
+
+            <h3 class="h5 mb-0 mt-1">
+              {{ party.member3.wowClass }}
+            </h3>
+          </div>
+
+          <span class="badge text-bg-primary">
+            {{ party.member3.specialization }}
+          </span>
+        </div>
+
+        <div class="list-group-item bg-dark text-light border-secondary d-flex justify-content-between align-items-center gap-3">
+          <div>
+            <span class="text-warning fw-bold">
+              Integrante 4
+            </span>
+
+            <h3 class="h5 mb-0 mt-1">
+              {{ party.member4.wowClass }}
+            </h3>
+          </div>
+
+          <span class="badge text-bg-primary">
+            {{ party.member4.specialization }}
+          </span>
+        </div>
+
+        <div class="list-group-item bg-dark text-light border-secondary d-flex justify-content-between align-items-center gap-3">
+          <div>
+            <span class="text-warning fw-bold">
+              Integrante 5
+            </span>
+
+            <h3 class="h5 mb-0 mt-1">
+              {{ party.member5.wowClass }}
+            </h3>
+          </div>
+
+          <span class="badge text-bg-primary">
+            {{ party.member5.specialization }}
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+} @else {
+  <div class="alert alert-secondary mt-4 mb-0">
+    Completá una composición válida para ver el resumen.
+  </div>
+}
