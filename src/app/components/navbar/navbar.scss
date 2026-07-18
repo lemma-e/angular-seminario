@@ -1,11 +1,21 @@
 .navbar {
-  min-height: 70px;
+  min-height: 80px;
+  padding: 0.35rem 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-logo {
-  height: 48px;
-  width: auto;
+  display: block;
+  width: 230px;
+  height: 70px;
   object-fit: contain;
+  object-position: left center;
 }
 
 .nav-link {
@@ -13,5 +23,12 @@
 }
 
 .nav-link:hover {
-  color: #F4D03F ;
+  color: #f4d03f;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    width: 175px;
+    height: 55px;
+  }
 }
