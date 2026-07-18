@@ -4,7 +4,7 @@
         <h2 class="text-warning mb-2"> Crear composición de Party </h2>
         <p class="text-light opacity-75 mb-4"> Seleccioná una mazmorra y los cinco integrantes del grupo.</p>
 
-        <form [formGroup]="partyForm" (submit)="onSubmit()">
+        <form [formGroup]="partyForm" (ngSubmit)="onSubmit()">
 
         <div class="mb-4">
             <label for="dungeon" class="form-label"> Mazmorra</label>
